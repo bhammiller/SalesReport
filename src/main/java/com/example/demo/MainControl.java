@@ -5,4 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MainControl {
+    @RequestMapping("/")
+    public String sales_reporter(){
+        SalesReport report = new SalesReport();
+        String result = report.salesReporting();
+        return result;
+    }
 }
