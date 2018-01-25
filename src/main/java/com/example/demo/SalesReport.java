@@ -15,6 +15,7 @@ public class SalesReport {
         System.out.println("What is the customer's number");
         customer_number = keyboard.nextInt();
         System.out.println("What is the customer's name");
+        keyboard.nextLine();
         customer_name = keyboard.nextLine();
         System.out.println("How much did the customer spend");
         sales_amount = keyboard.nextDouble();
@@ -34,8 +35,11 @@ public class SalesReport {
         total_amount_due = sales_amount + total_tax_due;
         String result = ("Sales Report\n" + "Customer number is " +customer_number + "\nCustomer name is " + customer_name
                 + "\nPrice without tax is $" + sales_amount + "\nSales tax is $"
-                + sales_tax + "\nTotal Amount due is $" + total_amount_due);
+                + total_tax_due + "\nTotal Amount due is $" + total_amount_due);
+        String result_web = ("Sales Report<br/>" + "Customer number is " +customer_number + "<br/>Customer name is " + customer_name
+                + "<br/>Price without tax is $" + sales_amount + "<br/>Sales tax is $"
+                + total_tax_due + "<br/>Total Amount due is $" + total_amount_due);
         System.out.println(result);
-        return result;
+        return result_web;
     }
 }
